@@ -1,0 +1,571 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>株式会社ミツバ 企業VP（歴史編）制作のご提案</title>
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Kaisei+Decol&family=Yomogi&family=Zen+Kurenaido&display=swap');
+    @import url('https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css');
+    
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+    
+    body {
+      font-family: 'Zen Kurenaido', sans-serif;
+      background-color: #F2F2F2;
+      color: #182D40;
+      line-height: 1.4;
+      overflow-x: hidden;
+    }
+    
+    .container {
+      width: 100%;
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 20px;
+    }
+    
+    .header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 30px;
+      padding-bottom: 15px;
+      border-bottom: 3px dashed #2E578C;
+    }
+    
+    .header-title {
+      display: flex;
+      align-items: center;
+      gap: 15px;
+    }
+    
+    .header-title h1 {
+      font-family: 'Kaisei Decol', serif;
+      font-size: 32px;
+      font-weight: bold;
+      background: linear-gradient(90deg, #182D40, #2E578C);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      text-shadow: 1px 1px 3px rgba(0,0,0,0.1);
+    }
+    
+    .header-info {
+      text-align: right;
+      font-size: 14px;
+      color: #592A2A;
+    }
+    
+    .content {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 20px;
+    }
+    
+    .column {
+      flex: 1 1 33%;
+      min-width: 300px;
+    }
+    
+    .section {
+      background-color: rgba(255,255,255,0.8);
+      border-radius: 12px;
+      padding: 20px;
+      margin-bottom: 20px;
+      box-shadow: 0 4px 8px rgba(0,0,0,0.05);
+      position: relative;
+      overflow: hidden;
+      border: 2px solid transparent;
+      border-image: linear-gradient(45deg, #2E578C, #BF807A);
+      border-image-slice: 1;
+    }
+    
+    .section:hover {
+      box-shadow: 0 6px 12px rgba(46,87,140,0.15);
+      transform: translateY(-3px);
+      transition: all 0.3s ease;
+    }
+    
+    .section h2 {
+      font-family: 'Kaisei Decol', serif;
+      font-size: 24px;
+      color: #2E578C;
+      margin-bottom: 15px;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+    
+    .section h3 {
+      font-size: 18px;
+      color: #1e40af;
+      margin: 15px 0 10px;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+    
+    .section p {
+      font-size: 14px;
+      color: #334155;
+      margin-bottom: 10px;
+    }
+    
+    .highlight {
+      background: linear-gradient(transparent 60%, #BF807A 40%);
+      padding: 0 3px;
+      font-weight: bold;
+    }
+    
+    .keyword {
+      color: #592A2A;
+      font-weight: bold;
+      display: inline-flex;
+      align-items: center;
+      gap: 5px;
+    }
+    
+    .icon-bg {
+      position: absolute;
+      right: -20px;
+      top: -20px;
+      font-size: 100px;
+      opacity: 0.05;
+      transform: rotate(10deg);
+      z-index: 0;
+    }
+    
+    .card {
+      background-color: white;
+      border-radius: 12px;
+      padding: 15px;
+      margin: 10px 0;
+      box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+      position: relative;
+    }
+    
+    .card-icon {
+      position: absolute;
+      top: 10px;
+      right: 10px;
+      font-size: 24px;
+      color: #2E578C;
+    }
+    
+    .timeline {
+      position: relative;
+      margin: 20px 0;
+      padding-left: 30px;
+    }
+    
+    .timeline::before {
+      content: '';
+      position: absolute;
+      left: 10px;
+      top: 0;
+      height: 100%;
+      width: 4px;
+      background: linear-gradient(to bottom, #2E578C, #BF807A);
+      border-radius: 2px;
+    }
+    
+    .timeline-item {
+      position: relative;
+      margin-bottom: 20px;
+      padding-bottom: 10px;
+    }
+    
+    .timeline-item::before {
+      content: '';
+      position: absolute;
+      left: -25px;
+      top: 5px;
+      width: 15px;
+      height: 15px;
+      border-radius: 50%;
+      background-color: #BF807A;
+      border: 3px solid #2E578C;
+      z-index: 1;
+    }
+    
+    .timeline-date {
+      font-weight: bold;
+      color: #592A2A;
+      margin-bottom: 5px;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+    
+    .arrow {
+      display: flex;
+      justify-content: center;
+      margin: 15px 0;
+      color: #2E578C;
+      font-size: 24px;
+    }
+    
+    .bubble {
+      background-color: rgba(46,87,140,0.1);
+      border-radius: 20px;
+      padding: 10px 15px;
+      margin: 10px 0;
+      position: relative;
+    }
+    
+    .bubble::after {
+      content: '';
+      position: absolute;
+      top: -10px;
+      left: 20px;
+      border-width: 0 10px 10px;
+      border-style: solid;
+      border-color: transparent transparent rgba(46,87,140,0.1) transparent;
+    }
+    
+    .tag {
+      display: inline-block;
+      background-color: #2E578C;
+      color: white;
+      padding: 3px 8px;
+      border-radius: 12px;
+      font-size: 12px;
+      margin-right: 5px;
+      margin-bottom: 5px;
+    }
+    
+    .conclusion {
+      background: linear-gradient(135deg, rgba(46,87,140,0.1), rgba(191,128,122,0.1));
+      padding: 20px;
+      border-radius: 12px;
+      text-align: center;
+      margin-top: 20px;
+    }
+    
+    .conclusion h2 {
+      color: #592A2A;
+      text-align: center;
+      margin-bottom: 15px;
+    }
+    
+    .footer {
+      text-align: center;
+      margin-top: 30px;
+      padding-top: 20px;
+      border-top: 1px dashed #BF807A;
+      font-size: 12px;
+      color: #592A2A;
+    }
+
+    /* アニメーション */
+    @keyframes flow {
+      0% { stroke-dashoffset: 1000; }
+      100% { stroke-dashoffset: 0; }
+    }
+    
+    @keyframes gradientShift {
+      0% { background-position: 0% 50%; }
+      50% { background-position: 100% 50%; }
+      100% { background-position: 0% 50%; }
+    }
+    
+    .animate-icon {
+      animation: pulse 2s infinite ease-in-out;
+    }
+    
+    @keyframes pulse {
+      0% { transform: scale(1); }
+      50% { transform: scale(1.2); }
+      100% { transform: scale(1); }
+    }
+    
+    .hover-scale:hover {
+      transform: scale(1.2);
+      transition: transform 0.3s ease;
+    }
+    
+    .hand-drawn {
+      border: 2px solid #592A2A;
+      border-radius: 12px;
+      padding: 15px;
+      position: relative;
+      background-color: white;
+      box-shadow: 3px 3px 0 rgba(89,42,42,0.3);
+    }
+    
+    /* スクロールアニメーション */
+    .fade-in {
+      opacity: 0;
+      transform: translateY(20px);
+      transition: opacity 0.6s ease, transform 0.6s ease;
+    }
+    
+    .fade-in.active {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <div class="header">
+      <div class="header-title">
+        <i class="fa-solid fa-film fa-2x fa-beat" style="color: #2E578C;"></i>
+        <h1>株式会社ミツバ 企業VP（歴史編）制作のご提案</h1>
+        <i class="fa-solid fa-lightbulb fa-2x fa-beat" style="color: #BF807A;"></i>
+      </div>
+      <div class="header-info">
+        <p><i class="fa-solid fa-calendar"></i> 2025年4月6日</p>
+      </div>
+    </div>
+
+    <div class="content">
+      <!-- 左カラム -->
+      <div class="column fade-in">
+        <div class="section">
+          <i class="fa-solid fa-clipboard-list icon-bg"></i>
+          <h2><i class="fa-solid fa-clipboard-check fa-beat"></i> プロジェクト概要</h2>
+          <p>今回ご提案する映像制作にあたり、以下の点を重要な要素として理解しております。</p>
+          
+          <h3><i class="fa-solid fa-bullseye fa-bounce"></i> 目的</h3>
+          <div class="card">
+            <i class="fa-solid fa-chart-line card-icon"></i>
+            <p class="keyword"><i class="fa-solid fa-user-tie"></i> 投資促進</p>
+            <p>特に40～50代個人投資家</p>
+          </div>
+          <div class="card">
+            <i class="fa-solid fa-users card-icon"></i>
+            <p class="keyword"><i class="fa-solid fa-briefcase"></i> 採用活動</p>
+            <p>新卒・中途</p>
+          </div>
+          <div class="card">
+            <i class="fa-solid fa-heart card-icon"></i>
+            <p class="keyword"><i class="fa-solid fa-handshake"></i> 社員エンゲージメント向上</p>
+          </div>
+          
+          <h3><i class="fa-solid fa-palette fa-fade"></i> テーマ</h3>
+          <p><span class="tag"><i class="fa-solid fa-clock-rotate-left"></i> 企業の歴史・生い立ち</span></p>
+          <p><span class="tag"><i class="fa-solid fa-gears"></i> 技術力</span></p>
+          <p><span class="tag"><i class="fa-solid fa-binoculars"></i> 未来へのビジョン</span></p>
+          
+          <h3><i class="fa-solid fa-triangle-exclamation fa-shake"></i> 重要留意点</h3>
+          <div class="bubble">
+            <p><i class="fa-solid fa-ban"></i> 特定製品・搭載車種の具体的露出NG</p>
+            <p><i class="fa-solid fa-arrow-right"></i> 技術の提供価値にフォーカス</p>
+          </div>
+        </div>
+
+        <div class="section fade-in">
+          <i class="fa-solid fa-lightbulb icon-bg"></i>
+          <h2><i class="fa-solid fa-quote-left fa-flip"></i> コンセプト提案</h2>
+          <div class="hand-drawn">
+            <h3 style="text-align: center; font-family: 'Yomogi', cursive; color: #592A2A;">「思い出のそばにはいつも、ミツバ。」</h3>
+          </div>
+          
+          <h3><i class="fa-solid fa-heart-pulse fa-beat"></i> ご提案の核心</h3>
+          <p>ミツバ様の歴史を、単なる年表ではなく、<span class="keyword"><i class="fa-solid fa-clock"></i> 技術が各時代の人々の日常に寄り添い</span>、「<span class="highlight">喜びと安心</span>」の瞬間を紡いできた<span class="keyword"><i class="fa-solid fa-film"></i> 感動的なドラマ</span>として描きます。</p>
+          <p>目指すのは、<span class="keyword"><i class="fa-solid fa-face-smile"></i> 視聴者の感情を揺さぶり</span>、深い共感とエンゲージメントを生み、記憶に残る企業VPです。</p>
+        </div>
+      </div>
+
+      <!-- 中央カラム -->
+      <div class="column fade-in">
+        <div class="section">
+          <i class="fa-solid fa-video icon-bg"></i>
+          <h2><i class="fa-solid fa-clapperboard fa-bounce"></i> 表現手法</h2>
+          <p>このエモーショナルな物語を、<span class="highlight">最新AI技術による「シネマティック・リアリズム」</span>で表現。</p>
+          <div class="card">
+            <i class="fa-solid fa-star card-icon"></i>
+            <p>低コストながら、<span class="keyword"><i class="fa-solid fa-film"></i> 実写映画に迫る高品質な映像</span>で、ミツバ様の先進性と魅力を最大化します。</p>
+          </div>
+          
+          <h3><i class="fa-solid fa-book-open fa-flip"></i> あらすじ</h3>
+          <p>物語は、<span class="keyword"><i class="fa-solid fa-fire"></i> 創業者の熱意が灯した小さな光</span>から始まります。</p>
+          <div class="arrow">
+            <i class="fa-solid fa-arrow-down fa-bounce"></i>
+          </div>
+          <p>それは時代を経て、<span class="keyword"><i class="fa-solid fa-bicycle"></i> 80年代の若者の冒険</span>を照らし、</p>
+          <div class="arrow">
+            <i class="fa-solid fa-arrow-down fa-bounce"></i>
+          </div>
+          <p><span class="keyword"><i class="fa-solid fa-house"></i> 現代の家族の笑顔</span>を支え、</p>
+          <div class="arrow">
+            <i class="fa-solid fa-arrow-down fa-bounce"></i>
+          </div>
+          <p>そして<span class="keyword"><i class="fa-solid fa-car"></i> 未来の安心な移動</span>へと繋がっていく――。</p>
+          <div class="bubble">
+            <p>過去から現在、そして未来へと、ミツバ様の技術と想いが一本の線で結ばれ、進化していく感動の軌跡にご期待ください。</p>
+          </div>
+        </div>
+
+        <div class="section fade-in">
+          <i class="fa-solid fa-route icon-bg"></i>
+          <h2><i class="fa-solid fa-map fa-fade"></i> シナリオ構成案</h2>
+          <p>ドラマ性を高め、メッセージを効果的に伝えるため、以下の全8パート構成のシナリオを考案いたしました。</p>
+          
+          <div class="timeline">
+            <div class="timeline-item">
+              <div class="timeline-date">
+                <i class="fa-solid fa-flag-checkered"></i> 【導入】創業の志 (1940年代)
+              </div>
+              <p>社会貢献への熱意とものづくりの原点。</p>
+            </div>
+            
+            <div class="timeline-item">
+              <div class="timeline-date">
+                <i class="fa-solid fa-bicycle"></i> 【成長】ユーザー体験① (1980年代)
+              </div>
+              <p>自転車ランプが支えた若者の「安心」。</p>
+            </div>
+            
+            <div class="timeline-item">
+              <div class="timeline-date">
+                <i class="fa-solid fa-key"></i> 【進化】ユーザー体験② (2000年代)
+              </div>
+              <p>リモコンエンジンスターターによる「快適」と「安心」。</p>
+            </div>
+            
+            <div class="timeline-item">
+              <div class="timeline-date">
+                <i class="fa-solid fa-door-open"></i> 【発展】ユーザー体験③ (2020年代)
+              </div>
+              <p>パワースライドドアがもたらす家族の「喜び」と「優しさ」。</p>
+            </div>
+            
+            <div class="timeline-item">
+              <div class="timeline-date">
+                <i class="fa-solid fa-car-side fa-fade"></i> 【未来】未来のモビリティ体験
+              </div>
+              <p>自動運転が拓く世代を超えた「安全」と「繋がり」。</p>
+            </div>
+            
+            <div class="timeline-item">
+              <div class="timeline-date">
+                <i class="fa-solid fa-microchip"></i> 【核心】ミツバの技術と人材
+              </div>
+              <p>コア技術の先進性とそれを支える社員の情熱。</p>
+            </div>
+            
+            <div class="timeline-item">
+              <div class="timeline-date">
+                <i class="fa-solid fa-flag"></i> 【結び】未来への決意表明
+              </div>
+              <p>イノベーションと社会貢献への意志を象徴的に描き、ブランドで締めくくる。</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- 右カラム -->
+      <div class="column fade-in">
+        <div class="section">
+          <i class="fa-solid fa-robot icon-bg"></i>
+          <h2><i class="fa-solid fa-wand-magic-sparkles fa-spin"></i> AI映像技術</h2>
+          <h3><i class="fa-solid fa-question-circle fa-flip"></i> なぜAIか？</h3>
+          <p>ご予算内で最大限の<span class="highlight">「シネマティック=映画のような」品質</span>を実現し、実写では困難または高コストな時代設定や未来描写、抽象表現を可能にするためです。</p>
+          
+          <h3><i class="fa-solid fa-award fa-bounce"></i> メリット</h3>
+          <div class="card">
+            <i class="fa-solid fa-coins card-icon"></i>
+            <p class="keyword"><i class="fa-solid fa-piggy-bank"></i> コスト効率</p>
+            <p>キャスティング、衣装、美術、CG等の費用を大幅に削減。</p>
+          </div>
+          
+          <div class="card">
+            <i class="fa-solid fa-palette card-icon"></i>
+            <p class="keyword"><i class="fa-solid fa-palette"></i> 表現力</p>
+            <p>特定製品を避けつつ「技術の恩恵」を描写可能。</p>
+            <p>感情豊かな人物描写、リアルな時代・未来風景の再現。</p>
+          </div>
+          
+          <div class="card">
+            <i class="fa-solid fa-bolt card-icon"></i>
+            <p class="keyword"><i class="fa-solid fa-stopwatch"></i> スピード</p>
+            <p>短納期に対応可能な迅速な映像生成。</p>
+          </div>
+          
+          <div class="card">
+            <i class="fa-solid fa-trophy card-icon"></i>
+            <p class="keyword"><i class="fa-solid fa-certificate"></i> クオリティ</p>
+            <p>最新AIは目覚ましい進化を遂げており、従来の「AIっぽさ」を感じさせない、<span class="highlight">自然で高品質な実写風映像</span>の生成が可能です。</p>
+          </div>
+        </div>
+
+        <div class="section fade-in">
+          <i class="fa-solid fa-chart-line icon-bg"></i>
+          <h2><i class="fa-solid fa-bullseye fa-beat"></i> 期待される効果</h2>
+          <p>本映像により、以下の効果が期待されます。</p>
+          
+          <div class="card">
+            <i class="fa-solid fa-user-tie card-icon"></i>
+            <p class="keyword"><i class="fa-solid fa-chart-line"></i> 投資家に対して</p>
+            <p>企業の信頼性、技術力、成長性を情感豊かに伝え、投資意欲を喚起。</p>
+          </div>
+          
+          <div class="card">
+            <i class="fa-solid fa-user-graduate card-icon"></i>
+            <p class="keyword"><i class="fa-solid fa-briefcase"></i> 求職者に対して</p>
+            <p>社会貢献性や未来志向、働く魅力を伝え、応募意欲を向上。</p>
+          </div>
+          
+          <div class="card">
+            <i class="fa-solid fa-users card-icon"></i>
+            <p class="keyword"><i class="fa-solid fa-heart"></i> 社員に対して</p>
+            <p>企業の歴史と功績への誇りを醸成し、エンゲージメントを強化。</p>
+          </div>
+          
+          <div class="card">
+            <i class="fa-solid fa-building card-icon"></i>
+            <p class="keyword"><i class="fa-solid fa-star"></i> ブランドイメージ向上</p>
+            <p><span class="tag"><i class="fa-solid fa-gears"></i> 技術力</span></p>
+            <p><span class="tag"><i class="fa-solid fa-shield-halved"></i> 信頼性</span></p>
+            <p><span class="tag"><i class="fa-solid fa-rocket"></i> 未来志向</span></p>
+            <p><span class="tag"><i class="fa-solid fa-hand-holding-heart"></i> 人間味</span></p>
+          </div>
+        </div>
+      </div>
+    </div>
+    
+    <div class="conclusion fade-in">
+      <h2><i class="fa-solid fa-lightbulb fa-2x fa-beat"></i><br>「思い出のそばにはいつも、ミツバ。」</h2>
+      <p>技術が紡ぐ感動の物語を、最新AIの力で映像化します。</p>
+      <p>過去から未来へ。ミツバの技術と想いが一本の線で繋がる感動のストーリーにご期待ください。</p>
+    </div>
+    
+    <div class="footer">
+      <p><i class="fa-solid fa-book"></i> 株式会社ミツバ 企業VP（歴史編）制作提案資料</p>
+    </div>
+  </div>
+
+  <script>
+    // スクロールアニメーション
+    document.addEventListener('DOMContentLoaded', function() {
+      const fadeElements = document.querySelectorAll('.fade-in');
+      
+      function checkFade() {
+        fadeElements.forEach(element => {
+          const elementTop = element.getBoundingClientRect().top;
+          const windowHeight = window.innerHeight;
+          
+          if (elementTop < windowHeight - 100) {
+            element.classList.add('active');
+          }
+        });
+      }
+      
+      window.addEventListener('scroll', checkFade);
+      checkFade(); // 初期チェック
+      
+      // アイコンホバー効果
+      const icons = document.querySelectorAll('.fa-solid:not(.icon-bg):not(.fa-beat):not(.fa-bounce):not(.fa-fade):not(.fa-flip):not(.fa-shake):not(.fa-spin)');
+      icons.forEach(icon => {
+        icon.classList.add('hover-scale');
+      });
+    });
+  </script>
+</body>
+</html>株式会社ミツバ
